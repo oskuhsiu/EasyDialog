@@ -1,13 +1,15 @@
 apply plugin: 'com.android.library'
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.oskuhsiu'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 21
+        minSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -19,7 +21,8 @@ android {
     }
 }
 
+def SupportLib = '26.0.2'
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.2'
+    compile "com.android.support:appcompat-v7:$SupportLib"
 }
